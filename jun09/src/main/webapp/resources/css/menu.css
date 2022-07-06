@@ -1,0 +1,280 @@
+@charset "UTF-8";
+
+body {
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+#container {
+	width: 100%;
+	height: 100%;
+}
+
+#menubar {
+	width: 300px;
+	min-height: 100vh;
+	height:100%;
+	background-color: skyblue;
+	float: left;
+	padding: 30px;
+	box-sizing: border-box;
+	position: fixed;
+}
+#menubar img{
+	width: 100%;
+}
+
+#main {
+	margin-left:300px;
+	min-height: 100vh;
+	width: calc(100% - 300px);
+	background-color: gray;
+	float: left;
+	padding: 30px;
+	box-sizing: border-box;
+	/* height:100%; */
+	overflow: auto;
+	overflow-x:hidden;
+	overflow-y: auto;
+}
+#loginform {
+	width: 100%;
+	/* margin: 10px; */
+	/* box-sizing: border-box; */
+}
+#login2{
+	margin: 10px 0px;
+	width: 100%;
+	height: 40px;
+	background: #ADB4B0;
+	text-align: center;
+	line-height: 40px;
+	border: 1px white solid;
+	box-sizing: border-box;
+}
+#loginform input{
+	width: 100%;
+	height: 30px;
+	margin: 5px 0px;
+	/* margin-left: -5px; */
+	background-color: #d9fbfc;
+	text-align: center;
+	color: blue;
+}
+#loginform a, #loginform button{
+	margin:0;
+	padding:0;
+	border:1px solid;
+	background-color: #d9fbfc;
+	text-decoration: none;
+	color: blue;
+	font-size:medium;
+	margin: 5px 0px;
+	/* margin-left: -5px; */
+}
+#loginform a{
+	display: inline-block;		
+	width: 115px;
+	height: 30px;
+	padding: 3px;
+	vertical-align: middle;
+	text-align: center;
+}
+#loginform button{
+	width: 115px;
+	height: 30px;
+	vertical-align: middle;
+	float: right;
+}
+.wrap {
+	width: 100%;
+	height: auto;
+}
+
+/* 기본 CSS 설정 */
+body {
+	font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo",
+		"Apple SD Gothic Neo", Ngothic, sans-serif;
+	font-size: 1em;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+div {
+	/* display: inline-block; 이게 문제네요.*/
+	width: auto;
+	height: auto;
+}
+
+/* 화면 전체를 감싸는 박스 */
+.wrap {
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+/* 라디오 인풋을 이용했으며 인풋에 라벨을 이어 버튼으로 사용하므로 인풋 자체는 보여질 필요가 없음, 인풋 자체는 보이지 않게 가림 */
+input.button {
+	display: none;
+}
+
+/* 라디오 인풋에 체크가 되면, 인접한 .contents 상자를 보이게 함 */
+input[type=radio]:checked+.contents {
+	visibility: visible;
+	max-height: 500px;
+	-webkit-transform: scale(1, 1);
+	-ms-transform: scale(1, 1);
+	transform: scale(1, 1);
+	opacity: 1;
+}
+/* 라디오 인풋, 모두 닫는 버튼 */
+.closer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	background: #ADB4B0;
+	text-align: center;
+	font-family: "Arial Black";
+	font-size: 25px;
+	color: #fff;
+	cursor: pointer;
+}
+
+/* 닫기 버튼 애니메이션 효과, 삭제시 기능상 무방함 */
+input[type=radio].close:checked+.closer {
+	transform: translate(0, -100%);
+	-webkit-transition: transform .2s ease;
+	transition: transform .2s ease;
+}
+
+input[type=radio].close:not(:checked)+.closer {
+	transform: translate(0, 0);
+	-webkit-transition: transform .2s ease;
+	transition: transform .2s ease;
+}
+
+/* 메뉴 버튼 디자인 */
+.label {
+	height: 50px;
+	line-height: 50px;
+	width: 100%;
+	display: inline-block;
+	float: left;
+	overflow: hidden;
+	cursor: pointer;
+}
+/*  메뉴 버튼에 들어갈 아이콘을 100px * 100px, 투명한 PNG 로 저장하여 아래의 경로에 연동해주면 됨 
+    위쪽 코드 .label.a 부터 맨 아래코드 .label.e 까지가 메뉴버튼 오른쪽-> 왼쪽 순서 */
+.label.a {
+	background: #2E97B7;
+}
+
+.label.b {
+	background: #32B9BE;
+}
+
+.label.c {
+	background: #5BCEBF;
+}
+
+.label.d {
+	background: #74DCB9;
+}
+
+.label.e {
+	background: #94DCB9;
+}
+
+.label .rotate {
+	display: inline-block;
+}
+
+.label .rotate p {
+	position: relative;
+	font-size: 1.5em;
+	white-space: nowrap;
+	left: 40%;
+	color: #fff;
+}
+
+/* 컨텐츠 본문 */
+.contents {
+	position: relative;
+	visibility: collapse;
+	float: left;
+	height: auto;
+	width: 250px;
+	-webkit-transform: scale(1, 0);
+	-ms-transform: scale(1, 0);
+	transform: scale(1, 0);
+	-ms-transform-origin: top;
+	-webkit-transform-origin: top;
+	transform-origin: top;
+	max-height: 0;
+	-webkit-transition: transform 0.2s ease-out, opacity 0.2s ease-out,
+		max-height 0.1s ease-out;
+	transition: transform 0.2s ease-out, opacity 0.2s ease-out, max-height
+		0.1s ease-out;
+	opacity: 0;
+	z-index: 0;
+	overflow: hidden;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66c0c60a',
+		endColorstr='#59007c33', GradientType=1);
+}
+
+.inner {
+	display: table;
+	width: 100%;
+	height: 100%;
+	margin-left: 30px;
+	box-sizing: border-box;
+}
+
+.description {
+	display: table-cell;
+	vertical-align: middle;
+	z-index: 0;
+	background-color: white;
+}
+
+.description h3 {
+	width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 30px;
+	color: #37a4ab;
+	line-height: 1;
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+.description h3::first-letter {
+	font-size: 50px;
+	color: #0f848c;
+}
+
+.description p {
+	font-size: 19px;
+	line-height: 1.7;
+	color: #4e6b61;
+	padding-left: 20px;
+	overflow: auto;
+	letter-spacing: -1px;
+}
+footer{
+	position : fixed;
+	bottom : 0;
+	height: 50px;
+	width: 240px;
+	background-color: gray;
+}
